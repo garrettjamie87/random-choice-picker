@@ -3,7 +3,6 @@ const textarea = document.getElementById("textarea");
 
 textarea.focus();
 
-
 textarea.addEventListener("keyup", (e) => {
   createTags(e.target.value);
 
@@ -15,7 +14,6 @@ textarea.addEventListener("keyup", (e) => {
     randomSelect();
   }
 });
-
 
 function createTags(input) {
   const tags = input
@@ -35,33 +33,39 @@ function createTags(input) {
 }
 
 function randomSelect() {
-      // console.log(123)
-      const times = 30
+  // console.log(123)
+  const times = 30;
 
-      const interval = setInterval(()=>{
-            const randomTag = pickRandomTag()
+  const interval = setInterval(() => {
+    const randomTag = pickRandomTag();
 
-            highlightTag(randomTag)
+    highlightTag(randomTag);
 
-            setTimeout(()=>{
-                  unhightlightTag(randomTag)
+    setTimeout(() => {
+      unhightlightTag(randomTag);
+    }, 100);
+  }, 100);
 
-            }, 100)
+  setTimeout(() => {
+    clearInterval(interval);
 
+    setTimeout(() => {
+      const randomTag = pickRandomTag();
 
-
-      }, 100)
+      highlightTag(randomTag);
+    }, 100);
+  }, times * 100);
 }
 
 function pickRandomTag() {
-      const tags = document.querySelectorAll('.tag')
-      return tags[Math.floor(Math.random() * tags.length)]
+  const tags = document.querySelectorAll(".tag");
+  return tags[Math.floor(Math.random() * tags.length)];
 }
 
-function highlightTag(tag){
-      tag.classList.add('highlight')
+function highlightTag(tag) {
+  tag.classList.add("highlight");
 }
 
-function unhightlightTag(tag){
-      tag.classList.remove('highlight')
+function unhightlightTag(tag) {
+  tag.classList.remove("highlight");
 }
