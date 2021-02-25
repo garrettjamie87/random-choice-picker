@@ -17,8 +17,9 @@ body {
   margin: 0;
 }
 
-h3{
+h3 {
   margin: 10px 0 20px;
+  text-align: center;
 }
 
 .container {
@@ -35,17 +36,16 @@ textarea {
   font-size: 16px;
   padding: 10px;
 }
-  .tag {
-    background-color: rgb(206, 232, 180);
-    color: white;
-    border-radius: 50px;
-    padding: 10px 20px;
-    margin: 0 5px 10px 0;
-    font-size: 14px;
-    display: inline-block;
-  }
+.tag {
+  background-color: rgb(206, 232, 180);
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 0 5px 10px 0;
+  font-size: 14px;
+  display: inline-block;
+}
 
-  .tag.highlight {
-    background-color: rgb(76, 111, 76);
-  }
-
+.tag.highlight {
+  background-color: rgb(76, 111, 76);
+}
